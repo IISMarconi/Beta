@@ -9,7 +9,7 @@
 </ul>
 
 <h2> Controllo remoto </h2>
-Mediante l'app <a>Half Android</a> (da cambiare) o mediante l'app <a>RC Car Controller</a>. Il programma attualmente caricato sull'arduino permette il controllo solo con l'app Half Android. Per scegliere con quale applicazione comandarla basta cambiare la macro nel file sorgente .ino:<br>
+Mediante l'app <a href="https://github.com/IISMarconi/HalfAndroid">Half Android</a> (da cambiare) o mediante l'app <a href="https://play.google.com/store/apps/details?id=braulio.calle.bluetoothRCcontroller&gl=IT">RC Car Controller</a>. Il programma attualmente caricato sull'arduino permette il controllo solo con l'app Half Android. Per scegliere con quale applicazione comandarla basta cambiare la macro nel file sorgente .ino:<br>
 <i>&nbsp;&nbsp;&nbsp;&nbsp;#define HALF_ANDROID</i><br>
 <i>&nbsp;&nbsp;&nbsp;&nbsp;#define RC_APP</i><br>
 
