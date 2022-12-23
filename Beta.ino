@@ -12,7 +12,8 @@
   #define AUTO 'U'
   #define LUCI_ON  'J'
   #define LUCI_OFF 'O'
-#else #ifdef RC_APP
+#endif
+#ifdef RC_APP
   #define M_FORWARD 'F'
   #define M_BACKWARD 'B'
   #define M_LEFT 'L'
