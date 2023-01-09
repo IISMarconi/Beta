@@ -12,8 +12,7 @@
   #define AUTO 'U'
   #define LUCI_ON  'J'
   #define LUCI_OFF 'O'
-#endif
-#ifdef RC_APP
+#else #ifdef RC_APP
   #define M_FORWARD 'F'
   #define M_BACKWARD 'B'
   #define M_LEFT 'L'
@@ -25,10 +24,10 @@
 #endif
 
 AF_DCMotor right_motor(2);
-AF_DCMotor left_motor(4);
+AF_DCMotor left_motor (3);
 
 const int right_speed = 255;
-const int left_speed = 220;
+const int left_speed  = 230;
 
 #define led_1 A0
 #define led_2 A1
@@ -42,7 +41,7 @@ const int tx = 2;
 const int rx = 3;
 char c;
 
-SoftwareSerial ble(tx,rx);
+SoftwareSerial blue(tx,rx);
 
 void forward()
 {
@@ -122,7 +121,7 @@ void guida_autonoma()
 
 void setup()
 {
-  ble.begin(9600);
+  blue.begin(9600);
   Serial.begin(9600);
   luci_off();
   pinMode(trig_pin, OUTPUT);
@@ -131,9 +130,9 @@ void setup()
 
 void loop()
 {
-  if(ble.available())
+  if(blue.available())
   {
-    c = ble.read();
+    c = blue.read();
     Serial.println(c);
   }
 
@@ -145,13 +144,4 @@ void loop()
   if(c == M_STOP) m_stop();
   if(c == LUCI_ON) luci_on();
   if(c == LUCI_OFF) luci_off();
-  if((c == AUTO)) {
-    n_auto++;
-    if(auto_state) {
-      auto_state = false;
-    }
-    else if(n > 1) {
-      guida_autonoma(); 
-    }
-  }
 }
